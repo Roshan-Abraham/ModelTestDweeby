@@ -118,7 +118,7 @@ def multiModel():
 
         all_todos = [todo.to_dict()]
         df = pd.DataFrame.from_dict(all_todos)
-        cluster = PredCluster(df)
+        cluster = PredCluster(df, todo_id)
         out = cluster.to_json()
         PushIt(todo_id, out)
         return str(out) #type(cluster), 200 #jsonify(todo.to_dict()), 200
