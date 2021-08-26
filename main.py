@@ -4,7 +4,7 @@
 
 import os
 from flask import Flask, request, jsonify
-# from firebase_admin import credentials, firestore, initialize_app
+from firebase_admin import credentials, firestore, initialize_app
 import pandas as pd
 
 from ModelIO import PredCluster
@@ -14,10 +14,10 @@ from FireBaseIO import MCFunc,  EAFunc
 app = Flask(__name__)
 
 # Initialize Firestore DB
-# cred = credentials.Certificate("key.json")
-# default_app = initialize_app(cred)
-# db = firestore.client()
-# todo_ref = db.collection('DummyMLAIHardik')
+cred = credentials.Certificate("key.json")
+default_app = initialize_app(cred)
+db = firestore.client()
+todo_ref = db.collection('DummyMLAIHardik')
 
 
 @app.route('/list', methods=['GET'])
