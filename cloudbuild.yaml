@@ -1,0 +1,8 @@
+steps:
+  # build & push the container image
+- name: gcr.io/cloud-builders/docker
+  args: ['build', '-t', 'gcr.io/appsyntests-322514/image', '.']
+  images: ['gcr.io/appsyntests-322514/FireCRUD']
+  # Deploy container image to Cloud Run 
+- name: "gcr.io/cloud-builders/gcloud"
+  args: ['beta', 'run', 'deploy', 'todo', '--image', 'gcr.io/appsyntests-322514/todo:latest', '--region', 'asia-south1', '--allow-unauthenticated', '--platform', 'managed']
