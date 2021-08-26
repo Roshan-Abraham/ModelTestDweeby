@@ -31,7 +31,7 @@ def vectorization(df, columns):
 #currently  usering first name as UID as it a string format to test parameters, cannot test large scale(more than 8-9 users) because first name is not unique identifier
 # dont mind the coimmented code, that will play into effect once a  proper UID and anchoring measure is set
 
-def PredCluster(user_data, user_data1):
+def PredCluster(user_data, user_n):
     #reference anchor for vectorization to take standard hold
     #not really sure why this doesnt work on single input df
 
@@ -55,7 +55,7 @@ def PredCluster(user_data, user_data1):
     
     new_list = new_cluster.T.corr()
     # user_data1 has not been decieded how to be procured
-    user_n = user_data1.index[0]
+    # user_n = user_data1.index[0]
     
     likely_users = new_list[[user_n]].sort_values(by=[user_n],axis=0, ascending=False)[1:4]
     

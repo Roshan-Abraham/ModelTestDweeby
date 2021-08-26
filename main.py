@@ -7,7 +7,7 @@ from flask import Flask, request, jsonify
 from firebase_admin import credentials, firestore, initialize_app
 import pandas as pd
 
-from ModelIO import PredCluster
+from NewModelIO import PredCluster
 from FireBaseIO import MCFunc,  EAFunc
 
 # Initialize Flask app
